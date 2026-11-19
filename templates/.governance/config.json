@@ -1,0 +1,69 @@
+{
+  "agents": {
+    "line_budget": 60,
+    "line_hard": 100,
+    "glob": "AGENTS.md",
+    "ref_scope": [
+      "AGENTS.md"
+    ],
+    "check_refs": true,
+    "ref_ignore": [],
+    "ref_ignore_tokens": []
+  },
+  "tiers": {
+    "ai_read": [],
+    "human_read": [
+      "docs/方案"
+    ],
+    "human_read_forbid": [
+      "file_line_ref",
+      "revision_history"
+    ],
+    "file_line_ext": "py|ts|tsx|js|jsx|sh|go|rs|java|kt|rb|php|css|sql"
+  },
+  "board": {
+    "path": "",
+    "tasks_dir": "",
+    "stale_days": 14,
+    "ui_evidence_required": false,
+    "statuses": [
+      "待启动",
+      "进行中",
+      "待验收",
+      "已完成",
+      "挂起"
+    ],
+    "legacy_status": {
+      "待办": "待启动",
+      "部分完成": "进行中",
+      "完成": "已完成"
+    }
+  },
+  "skills": {
+    "canonical": "",
+    "copies": [],
+    "peer_repo": ""
+  },
+  "indexes": {
+    "files": [
+      "docs/README.md"
+    ],
+    "dirs": []
+  },
+  "adapters": {},
+  "html": {
+    "path": "docs/文档全景图.html"
+  },
+  "severity": {
+    "AGENTS-LINE": "warning",
+    "AGENTS-REF": "warning",
+    "INDEX-SYNC": "warning",
+    "DOC-TIER": "warning",
+    "BOARD-SCHEMA": "warning",
+    "BOARD-STALE": "warning",
+    "SKILL-SYNC": "warning",
+    "GEN-DRIFT": "warning",
+    "ADAPTER": "warning",
+    "AGENTS-LINE_HARD": "error"
+  }
+}

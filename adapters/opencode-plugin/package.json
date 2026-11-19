@@ -1,0 +1,20 @@
+{
+  "name": "governance-kit-opencode-plugin",
+  "version": "0.1.0",
+  "description": "governance-kit 的 OpenCode TUI 实时文档树参考适配器",
+  "type": "module",
+  "exports": {
+    "./tui": "./src/index.tsx"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "tsconfig.json"
+  ],
+  "peerDependencies": {
+    "@opentui/core": ">=0.6.6",
+    "@opentui/solid": "*",
+    "solid-js": "^1.9.0"
+  },
+  "scripts": {}
+}

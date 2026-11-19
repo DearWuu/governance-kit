@@ -1,0 +1,129 @@
+{
+  "v": 1,
+  "domain": "governance-kit",
+  "title": "治理套件本体",
+  "updated": "2026-11-16",
+  "entries": [
+    {
+      "id": "engine-cli",
+      "title": "引擎命令入口",
+      "group": "功能模块/引擎",
+      "kind": "module",
+      "summary": "统一编排 govern 子命令并维护进程级退出码与缓存收尾。",
+      "narrative": "引擎以单一 CLI 入口承接启动器和各适配器，让仓库发现、参数解析及错误口径不在调用方重复实现。下游按命令分派到规则、架构文档、看板和 HTML 等模块，用法或 IO 异常统一映射为退出码 2。缓存即使遇到异常也在入口收尾，牺牲少量命令内聚性换取适配器行为一致。",
+      "flow": [
+        "engine/govern 启动器调用 main。",
+        "main 解析参数并从 COMMANDS 选择处理器。",
+        "处理器调用对应业务模块，main 统一处理异常并 flush 缓存。"
+      ],
+      "pointers": [
+        {
+          "file": "engine/governkit/cli.py",
+          "symbol": "main",
+          "line": 734,
+          "end": 756,
+          "role": "入口"
+        }
+      ],
+      "source_hash": "1ff209b81fd5",
+      "ack_hash": "1ff209b81fd5"
+    },
+    {
+      "id": "engine-logic-sync",
+      "title": "架构文档同步",
+      "group": "功能模块/引擎",
+      "kind": "module",
+      "summary": "同步逻辑域的代码指针与源码摘要，同时保留待人工复核的叙事盖戳。",
+      "narrative": "同步只更新机械层的位置和摘要，不替人改写叙事或确认内容仍正确，这是区分 moved 与 changed 的核心取舍。上游由 logic sync 命令或维护流程触发，下游将每条动作交给单条同步逻辑，并把结果供 stale 检查和人工 accept 使用。损坏域暂跳过、失效指针不清空旧摘要，避免一次同步把已有审计依据覆盖成半截状态。",
+      "flow": [
+        "CLI 的 logic sync 调用 sync 并选择全部或指定域。",
+        "sync 逐条重定位符号并计算 source_hash。",
+        "仅写回机械字段，返回 moved/changed/broken/unchanged 供后续复核。"
+      ],
+      "pointers": [
+        {
+          "file": "engine/governkit/logic.py",
+          "symbol": "sync",
+          "line": 369,
+          "end": 401,
+          "role": "核心"
+        }
+      ],
+      "source_hash": "09ab55a92507",
+      "ack_hash": "09ab55a92507"
+    },
+    {
+      "id": "engine-rules",
+      "title": "规则汇总扫描",
+      "group": "功能模块/引擎",
+      "kind": "module",
+      "summary": "聚合内置治理规则与外部适配器结果，形成统一排序的 findings。",
+      "narrative": "所有内置规则在这一处组合，确保 CLI 扫描和 HTML 等消费者看到同一套治理口径。上游接收仓库视图与配置，下游既复用各规则，也把外部 linter 归一化后并入，而不在套件内复制第二套检查。统一按稳定键排序让输出和扫描摘要可复现，适配器则可按调用场景选择跳过。",
+      "flow": [
+        "CLI 扫描或生成流程调用 run_all。",
+        "run_all 依次执行内置规则并按配置运行外部适配器。",
+        "合并 findings 后稳定排序，交回扫描、健康检查或 HTML 消费者。"
+      ],
+      "pointers": [
+        {
+          "file": "engine/governkit/rules.py",
+          "symbol": "run_all",
+          "line": 571,
+          "end": 582,
+          "role": "核心"
+        }
+      ],
+      "source_hash": "7b8d7b8d0110",
+      "ack_hash": "7b8d7b8d0110"
+    },
+    {
+      "id": "engine-board",
+      "title": "进度板解析",
+      "group": "数据与存储/进度板",
+      "kind": "data",
+      "summary": "把任务文件与旧版单文件进度板归一化为统一任务数据。",
+      "narrative": "进度板同时兼容任务目录和旧版 Markdown 单文件，是为了让扫描、打钩及插件展示共享同一数据模型。上游依赖仓库文本与看板路径配置，任务文件保留 frontmatter、证据与 checklist，旧板则保留标题、状态、日期和负责人。旧板不伪造 checklist 数据，以 mode 显式区分能力边界，避免打钩功能误写不支持的存储形态。",
+      "flow": [
+        "board、check 或插件加载流程调用 parse_board。",
+        "先解析任务目录中的 frontmatter 与 checklist，再解析旧版进度板分节。",
+        "返回带 mode 和源码位置的统一任务列表，供规则、渲染及打钩消费。"
+      ],
+      "pointers": [
+        {
+          "file": "engine/governkit/rules.py",
+          "symbol": "parse_board",
+          "line": 317,
+          "end": 372,
+          "role": "核心"
+        }
+      ],
+      "source_hash": "6547b1c06a4a",
+      "ack_hash": "6547b1c06a4a"
+    },
+    {
+      "id": "plugin-session",
+      "title": "插件会话状态",
+      "group": "功能模块/TUI插件",
+      "kind": "module",
+      "summary": "集中管理 TUI 插件的会话状态、异步动作与文件监听生命周期。",
+      "narrative": "插件把文件系统、子进程和引擎交互都收口在会话层，面板与侧边栏只消费状态，避免组件各自维护缓存和刷新策略。上游由 index.tsx 在 setup 中创建并注入界面，下游组合扫描、详情、看板与逻辑加载器，再通过 watcher 和防抖协调刷新。异步任务串行化、详情请求令牌及集中 dispose 用于抵抗连续导航和过期回写，取舍是状态机较集中但组件保持纯粹。",
+      "flow": [
+        "index.tsx 的 setup 创建 DocSession 并注入面板与侧边栏。",
+        "会话组合扫描、详情、看板和逻辑加载器，建立目录监听与首次刷新。",
+        "界面动作更新 state/runtime，watcher 防抖触发后续扫描与树刷新。",
+        "dispose 统一取消计时器并关闭 watcher。"
+      ],
+      "pointers": [
+        {
+          "file": "adapters/opencode-plugin/src/session.ts",
+          "symbol": "createDocSession",
+          "line": 167,
+          "end": 764,
+          "role": "入口"
+        }
+      ],
+      "source_hash": "aba5cb25f7cc",
+      "ack_hash": "aba5cb25f7cc"
+    }
+  ]
+}

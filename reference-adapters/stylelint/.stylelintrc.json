@@ -1,0 +1,115 @@
+{
+  "defaultSeverity": "error",
+  "ignoreFiles": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/out/**",
+    "**/coverage/**",
+    "**/*.min.css"
+  ],
+  "rules": {
+    "declaration-property-value-disallowed-list": {
+      "color": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "background-color": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "border-color": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "border-top-color": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "border-right-color": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "border-bottom-color": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "border-left-color": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "outline-color": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "fill": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "stroke": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "box-shadow": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "text-shadow": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "font-size": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "margin": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "margin-top": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "margin-right": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "margin-bottom": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "margin-left": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "padding": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "padding-top": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "padding-right": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "padding-bottom": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "padding-left": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "gap": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "row-gap": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "column-gap": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "inset": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "top": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "right": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "bottom": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "left": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ],
+      "border-radius": [
+        "/^(?!(?:var\\(|calc\\(|min\\(|max\\(|clamp\\(|color-mix\\(|(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor)(?:[ ]+(?:0|0px|0%|auto|inherit|initial|unset|revert|none|transparent|current[Cc]olor))*$))/"
+      ]
+    },
+    "declaration-no-important": true,
+    "selector-class-pattern": "^(?:obg|app|ui)-[a-z0-9]+(?:-[a-z0-9]+)*$",
+    "selector-max-specificity": "0,3,0",
+    "no-descending-specificity": true
+  }
+}

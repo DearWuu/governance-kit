@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="govern-scan-hash" content="fc50998c2e029d9b">
+<title>文档全景图 · governance-kit</title>
+<style>
+:root { --fg:#1f2328; --muted:#6a737d; --line:#d8dee4; --bg:#fff; --soft:#f6f8fa;
+  --error:#cf222e; --warning:#9a6700; --info:#0969da; --ok:#1a7f37; }
+* { box-sizing:border-box; }
+body { margin:0; padding:1.5rem 2rem 3rem; font:14px/1.6 -apple-system,"Segoe UI",
+  "Noto Sans SC",sans-serif; color:var(--fg); background:var(--bg); max-width:1200px; }
+h1 { font-size:1.5rem; margin:0 0 .25rem; }
+h2 { font-size:1.15rem; margin:2rem 0 .6rem; padding-bottom:.3rem;
+  border-bottom:1px solid var(--line); }
+h3 { font-size:1rem; margin:1rem 0 .4rem; }
+a { color:var(--info); }
+code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.86em;
+  background:var(--soft); padding:.1rem .3rem; border-radius:4px; }
+.muted { color:var(--muted); font-size:.85em; }
+.empty { color:var(--muted); }
+.cards { display:flex; flex-wrap:wrap; gap:.6rem; margin:1rem 0; }
+.card { border:1px solid var(--line); border-radius:8px; padding:.6rem .9rem; min-width:6rem; }
+.card .num { font-size:1.35rem; font-weight:600; }
+.card .label { color:var(--muted); font-size:.8rem; }
+nav.toc { display:flex; gap:1rem; flex-wrap:wrap; font-size:.9rem; }
+.tree-row { display:flex; align-items:center; gap:.6rem; padding:.12rem 0;
+  border-bottom:1px dashed #eef1f4; }
+.tree-row code { background:transparent; padding:0; }
+.badge { display:inline-block; border:1px solid var(--line); border-radius:999px;
+  padding:0 .5rem; font-size:.78rem; color:var(--muted); background:var(--soft); }
+.badge.over { color:var(--error); border-color:var(--error); }
+.badge.ok { color:var(--ok); border-color:var(--ok); }
+.badge.warn { color:var(--warning); border-color:var(--warning); }
+.tier { font-size:.75rem; border-radius:4px; padding:0 .35rem; border:1px solid var(--line); }
+.tier-AI读 { color:var(--info); border-color:var(--info); }
+.tier-人读 { color:var(--ok); border-color:var(--ok); }
+.subgroup { margin:.8rem 0 1.2rem; }
+.task { border-left:3px solid var(--line); padding:.35rem .7rem; margin:.4rem 0; }
+.task-title { font-weight:600; }
+.task-meta { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; margin-top:.2rem; }
+.dot { display:inline-block; width:.6rem; height:.6rem; border-radius:50%; margin-right:.35rem; }
+.dot-error { background:var(--error); }
+.dot-warning { background:var(--warning); }
+.dot-info { background:var(--info); }
+.filter-bar { display:flex; gap:1rem; flex-wrap:wrap; align-items:center;
+  background:var(--soft); border:1px solid var(--line); border-radius:8px; padding:.5rem .8rem; }
+.filter-bar select,.filter-bar input { font:inherit; padding:.15rem .3rem; }
+.rule-group { border:1px solid var(--line); border-radius:8px; margin:.6rem 0; padding:.3rem .7rem; }
+.rule-group summary { cursor:pointer; padding:.2rem 0; }
+.finding { padding:.28rem 0 .28rem .2rem; border-top:1px dashed #eef1f4; }
+.finding .loc { color:var(--muted); }
+.finding .msg { margin-left:.5rem; }
+.finding .fix { color:var(--ok); font-size:.84em; margin-left:1.6rem; }
+.finding.hidden { display:none; }
+.dot-ok { background:var(--ok); }
+.checks { margin:.3rem 0 .1rem .4rem; }
+.check { padding:.08rem 0; font-size:.92em; }
+.check.done { color:var(--muted); text-decoration:line-through; }
+.logic-entry { border:1px solid var(--line); border-radius:8px; margin:.5rem 0; padding:.3rem .7rem; }
+.logic-entry summary { cursor:pointer; display:flex; gap:.5rem; align-items:center;
+  flex-wrap:wrap; padding:.2rem 0; }
+.logic-body { padding:.3rem 0 .4rem .4rem; }
+.logic-sec h4 { margin:.7rem 0 .2rem; font-size:.95rem; }
+.sec-body { white-space:pre-wrap; }
+.logic-x { margin:.3rem 0; }
+.logic-x summary { cursor:pointer; color:var(--info); }
+.logic-flow { margin:.4rem 0; padding-left:1.4rem; }
+.pointers { margin-top:.5rem; }
+.pointer { display:flex; gap:.5rem; align-items:center; padding:.12rem 0; font-size:.9em; }
+footer { margin-top:2.5rem; color:var(--muted); font-size:.8rem; }
+</style>
+</head>
+<body>
+<header>
+<h1>文档全景图 · governance-kit</h1>
+<div class="muted">repo: /root/.config/opencode/plugins/governance-kit · scan-hash: <code>fc50998c2e029d9b</code></div>
+<nav class="toc">
+<a href="#overview">总览</a><a href="#contracts">契约树</a><a href="#docs">文档树</a>
+<a href="#board">进度板</a><a href="#logic">近期功能实现</a><a href="#findings">findings</a>
+</nav>
+</header>
+
+<section id="overview">
+<h2>总览</h2>
+<div class="cards"><div class="card"><div class="num">176</div><div class="label">文件</div></div><div class="card"><div class="num">32</div><div class="label">Markdown</div></div><div class="card"><div class="num">2</div><div class="label">AGENTS.md</div></div><div class="card"><div class="num">11</div><div class="label">任务</div></div><div class="card"><div class="num">5</div><div class="label">功能条目</div></div><div class="card"><div class="num">0</div><div class="label">待复核</div></div><div class="card"><div class="num">0</div><div class="label">error</div></div><div class="card"><div class="num">0</div><div class="label">warning</div></div><div class="card"><div class="num">0</div><div class="label">info</div></div></div>
+<p class="muted">error 0 · warning 0 · info 0
+· 生成物用 govern html 刷新，勿手改</p>
+</section>
+
+<section id="contracts">
+<h2>契约树（AGENTS 层级）</h2>
+<div class="tree-row" style="padding-left:0.0rem"><code>AGENTS.md</code><span class="badge">49 行</span></div>
+<div class="tree-row" style="padding-left:1.3rem"><code>templates/AGENTS.md</code><span class="badge">40 行</span></div>
+</section>
+
+<section id="docs">
+<h2>文档树（AI读 / 人读）</h2>
+<div class="subgroup"><h3>AI读 <span class="muted">(0)</span></h3><p class="empty">（无）</p></div>
+<div class="subgroup"><h3>人读 <span class="muted">(0)</span></h3><p class="empty">（无）</p></div>
+<div class="subgroup"><h3>未分级 <span class="muted">(32)</span></h3><div class="tree-row"><code>AGENTS.md</code><span class="tier tier-未分级">未分级</span><span class="muted">49 行</span></div><div class="tree-row"><code>README.md</code><span class="tier tier-未分级">未分级</span><span class="muted">297 行</span></div><div class="tree-row"><code>adapters/mcp/README.md</code><span class="tier tier-未分级">未分级</span><span class="muted">89 行</span></div><div class="tree-row"><code>adapters/opencode-plugin/README.md</code><span class="tier tier-未分级">未分级</span><span class="muted">288 行</span></div><div class="tree-row"><code>docs/近期功能实现.md</code><span class="tier tier-未分级">未分级</span><span class="muted">222 行</span></div><div class="tree-row"><code>reference-adapters/contract/README.md</code><span class="tier tier-未分级">未分级</span><span class="muted">60 行</span></div><div class="tree-row"><code>reference-adapters/stylelint/README.md</code><span class="tier tier-未分级">未分级</span><span class="muted">62 行</span></div><div class="tree-row"><code>reference-adapters/visual/README.md</code><span class="tier tier-未分级">未分级</span><span class="muted">60 行</span></div><div class="tree-row"><code>skill/SKILL.md</code><span class="tier tier-未分级">未分级</span><span class="muted">80 行</span></div><div class="tree-row"><code>skill/references/adapters.md</code><span class="tier tier-未分级">未分级</span><span class="muted">221 行</span></div><div class="tree-row"><code>skill/references/board-schema.md</code><span class="tier tier-未分级">未分级</span><span class="muted">83 行</span></div><div class="tree-row"><code>skill/references/doc-tiers.md</code><span class="tier tier-未分级">未分级</span><span class="muted">40 行</span></div><div class="tree-row"><code>skill/references/protocol.md</code><span class="tier tier-未分级">未分级</span><span class="muted">72 行</span></div><div class="tree-row"><code>skills/govern-view/SKILL.md</code><span class="tier tier-未分级">未分级</span><span class="muted">63 行</span></div><div class="tree-row"><code>skills/recent-features/SKILL.md</code><span class="tier tier-未分级">未分级</span><span class="muted">122 行</span></div><div class="tree-row"><code>templates/AGENTS.md</code><span class="tier tier-未分级">未分级</span><span class="muted">40 行</span></div><div class="tree-row"><code>templates/docs/README.md</code><span class="tier tier-未分级">未分级</span><span class="muted">24 行</span></div><div class="tree-row"><code>templates/进度/README.md</code><span class="tier tier-未分级">未分级</span><span class="muted">66 行</span></div><div class="tree-row"><code>templates/进度/example-task.md</code><span class="tier tier-未分级">未分级</span><span class="muted">35 行</span></div><div class="tree-row"><code>templates/进度板.md</code><span class="tier tier-未分级">未分级</span><span class="muted">24 行</span></div><div class="tree-row"><code>进度/adapters-real-frontend.md</code><span class="tier tier-未分级">未分级</span><span class="muted">18 行</span></div><div class="tree-row"><code>进度/board-check.md</code><span class="tier tier-未分级">未分级</span><span class="muted">23 行</span></div><div class="tree-row"><code>进度/engine-cache.md</code><span class="tier tier-未分级">未分级</span><span class="muted">23 行</span></div><div class="tree-row"><code>进度/engine-core.md</code><span class="tier tier-未分级">未分级</span><span class="muted">23 行</span></div><div class="tree-row"><code>进度/gate-escalation.md</code><span class="tier tier-未分级">未分级</span><span class="muted">18 行</span></div><div class="tree-row"><code>进度/mcp-mount-verify.md</code><span class="tier tier-未分级">未分级</span><span class="muted">18 行</span></div><div class="tree-row"><code>进度/mouse-verify.md</code><span class="tier tier-未分级">未分级</span><span class="muted">18 行</span></div><div class="tree-row"><code>进度/reference-adapters.md</code><span class="tier tier-未分级">未分级</span><span class="muted">23 行</span></div><div class="tree-row"><code>进度/skill-templates.md</code><span class="tier tier-未分级">未分级</span><span class="muted">23 行</span></div><div class="tree-row"><code>进度/trae-copies.md</code><span class="tier tier-未分级">未分级</span><span class="muted">18 行</span></div><div class="tree-row"><code>进度/tui-plugin.md</code><span class="tier tier-未分级">未分级</span><span class="muted">23 行</span></div><div class="tree-row"><code>进度板.md</code><span class="tier tier-未分级">未分级</span><span class="muted">16 行</span></div></div>
+</section>
+
+<section id="board">
+<h2>进度板</h2>
+<div class="subgroup"><h3>待启动 <span class="muted">(4)</span></h3><div class="task"><div class="task-title">MCP 适配器在 Codex/Trae 实际挂载验证</div><div class="task-meta"><span class="badge">负责 未指派</span><span class="badge">更新 2026-11-13</span><span class="badge warn">无证据</span><code class="muted">进度/mcp-mount-verify.md</code></div></div><div class="task"><div class="task-title">Trae 字节副本与 SKILL-SYNC 落地</div><div class="task-meta"><span class="badge">负责 未指派</span><span class="badge">更新 2026-11-13</span><span class="badge warn">无证据</span><code class="muted">进度/trae-copies.md</code></div></div><div class="task"><div class="task-title">参考适配器接入真实前端仓实测</div><div class="task-meta"><span class="badge">负责 未指派</span><span class="badge">更新 2026-11-13</span><span class="badge warn">无证据</span><code class="muted">进度/adapters-real-frontend.md</code></div></div><div class="task"><div class="task-title">结构规则 warning→error 升级</div><div class="task-meta"><span class="badge">负责 未指派</span><span class="badge">更新 2026-11-13</span><span class="badge warn">无证据</span><code class="muted">进度/gate-escalation.md</code></div></div></div>
+<div class="subgroup"><h3>挂起 <span class="muted">(1)</span></h3><div class="task"><div class="task-title">鼠标点击路径真实终端复核</div><div class="task-meta"><span class="badge">负责 未指派</span><span class="badge">更新 2026-11-13</span><span class="badge warn">无证据</span><code class="muted">进度/mouse-verify.md</code></div></div></div>
+<div class="subgroup"><h3>已完成 <span class="muted">(6)</span></h3><div class="task"><div class="task-title">OpenCode TUI 插件（全屏 + 侧边栏 + 嵌套树 + 打钩）</div><div class="task-meta"><span class="badge">负责 dev-governance-kit</span><span class="badge">更新 2026-11-13</span><span class="badge ok">证据 tsc --noEmit rc=0；tmux 真机抓屏 /tmp/opencode/gkV-board.txt、gkV-</span><code class="muted">进度/tui-plugin.md</code></div></div><div class="task"><div class="task-title">skill 协议层与 init 单源模板</div><div class="task-meta"><span class="badge">负责 dev-governance-kit</span><span class="badge">更新 2026-11-13</span><span class="badge ok">证据 govern init 二次执行 11 项「跳过（已存在）」；init 产物 strict scan 0 finding</span><code class="muted">进度/skill-templates.md</code></div></div><div class="task"><div class="task-title">参考适配器与 MCP</div><div class="task-meta"><span class="badge">负责 dev-governance-kit</span><span class="badge">更新 2026-11-13</span><span class="badge ok">证据 visual_gate --selftest 11 项、contract_gate --selftest 9 项、mcp</span><code class="muted">进度/reference-adapters.md</code></div></div><div class="task"><div class="task-title">引擎持久缓存</div><div class="task-meta"><span class="badge">负责 dev-governance-kit</span><span class="badge">更新 2026-11-13</span><span class="badge ok">证据 ObsightServer 实测 show 10.7s→0.077s(≈130×)、docs 18.6s→0.08s(≈</span><code class="muted">进度/engine-cache.md</code></div></div><div class="task"><div class="task-title">引擎核心与统一 CLI</div><div class="task-meta"><span class="badge">负责 dev-governance-kit</span><span class="badge">更新 2026-11-13</span><span class="badge ok">证据 python3 -m unittest discover → 103 tests OK；govern --repo . </span><code class="muted">进度/engine-core.md</code></div></div><div class="task"><div class="task-title">进度板打钩白名单写</div><div class="task-meta"><span class="badge">负责 dev-governance-kit</span><span class="badge">更新 2026-11-13</span><span class="badge ok">证据 check 命令 12 用例全绿；真机打钩文件实况 26:- [x] 与 updated=2026-11-13（/tmp</span><code class="muted">进度/board-check.md</code></div></div></div>
+</section>
+
+<section id="logic">
+<h2>近期功能实现（域 → 条目 → 机制）</h2>
+<div class="subgroup"><h3>治理套件本体 <span class="muted">(5 条)</span></h3><details class="logic-entry" data-status="fresh"><summary><span class="dot dot-ok"></span><b>插件会话状态</b><span class="badge">已同步</span><span class="muted">功能模块/TUI插件 · module</span></summary><div class="logic-body"><p>集中管理 TUI 插件的会话状态、异步动作与文件监听生命周期。</p><div class="sec-body">插件把文件系统、子进程和引擎交互都收口在会话层，面板与侧边栏只消费状态，避免组件各自维护缓存和刷新策略。上游由 index.tsx 在 setup 中创建并注入界面，下游组合扫描、详情、看板与逻辑加载器，再通过 watcher 和防抖协调刷新。异步任务串行化、详情请求令牌及集中 dispose 用于抵抗连续导航和过期回写，取舍是状态机较集中但组件保持纯粹。</div><ol class="logic-flow"><li>index.tsx 的 setup 创建 DocSession 并注入面板与侧边栏。</li><li>会话组合扫描、详情、看板和逻辑加载器，建立目录监听与首次刷新。</li><li>界面动作更新 state/runtime，watcher 防抖触发后续扫描与树刷新。</li><li>dispose 统一取消计时器并关闭 watcher。</li></ol><div class="pointers"><div class="pointer"><span class="badge">入口</span><code>adapters/opencode-plugin/src/session.ts:167-764</code> <code>createDocSession</code></div></div></div></details><details class="logic-entry" data-status="fresh"><summary><span class="dot dot-ok"></span><b>引擎命令入口</b><span class="badge">已同步</span><span class="muted">功能模块/引擎 · module</span></summary><div class="logic-body"><p>统一编排 govern 子命令并维护进程级退出码与缓存收尾。</p><div class="sec-body">引擎以单一 CLI 入口承接启动器和各适配器，让仓库发现、参数解析及错误口径不在调用方重复实现。下游按命令分派到规则、架构文档、看板和 HTML 等模块，用法或 IO 异常统一映射为退出码 2。缓存即使遇到异常也在入口收尾，牺牲少量命令内聚性换取适配器行为一致。</div><ol class="logic-flow"><li>engine/govern 启动器调用 main。</li><li>main 解析参数并从 COMMANDS 选择处理器。</li><li>处理器调用对应业务模块，main 统一处理异常并 flush 缓存。</li></ol><div class="pointers"><div class="pointer"><span class="badge">入口</span><code>engine/governkit/cli.py:734-756</code> <code>main</code></div></div></div></details><details class="logic-entry" data-status="fresh"><summary><span class="dot dot-ok"></span><b>架构文档同步</b><span class="badge">已同步</span><span class="muted">功能模块/引擎 · module</span></summary><div class="logic-body"><p>同步逻辑域的代码指针与源码摘要，同时保留待人工复核的叙事盖戳。</p><div class="sec-body">同步只更新机械层的位置和摘要，不替人改写叙事或确认内容仍正确，这是区分 moved 与 changed 的核心取舍。上游由 logic sync 命令或维护流程触发，下游将每条动作交给单条同步逻辑，并把结果供 stale 检查和人工 accept 使用。损坏域暂跳过、失效指针不清空旧摘要，避免一次同步把已有审计依据覆盖成半截状态。</div><ol class="logic-flow"><li>CLI 的 logic sync 调用 sync 并选择全部或指定域。</li><li>sync 逐条重定位符号并计算 source_hash。</li><li>仅写回机械字段，返回 moved/changed/broken/unchanged 供后续复核。</li></ol><div class="pointers"><div class="pointer"><span class="badge">核心</span><code>engine/governkit/logic.py:369-401</code> <code>sync</code></div></div></div></details><details class="logic-entry" data-status="fresh"><summary><span class="dot dot-ok"></span><b>规则汇总扫描</b><span class="badge">已同步</span><span class="muted">功能模块/引擎 · module</span></summary><div class="logic-body"><p>聚合内置治理规则与外部适配器结果，形成统一排序的 findings。</p><div class="sec-body">所有内置规则在这一处组合，确保 CLI 扫描和 HTML 等消费者看到同一套治理口径。上游接收仓库视图与配置，下游既复用各规则，也把外部 linter 归一化后并入，而不在套件内复制第二套检查。统一按稳定键排序让输出和扫描摘要可复现，适配器则可按调用场景选择跳过。</div><ol class="logic-flow"><li>CLI 扫描或生成流程调用 run_all。</li><li>run_all 依次执行内置规则并按配置运行外部适配器。</li><li>合并 findings 后稳定排序，交回扫描、健康检查或 HTML 消费者。</li></ol><div class="pointers"><div class="pointer"><span class="badge">核心</span><code>engine/governkit/rules.py:571-582</code> <code>run_all</code></div></div></div></details><details class="logic-entry" data-status="fresh"><summary><span class="dot dot-ok"></span><b>进度板解析</b><span class="badge">已同步</span><span class="muted">数据与存储/进度板 · data</span></summary><div class="logic-body"><p>把任务文件与旧版单文件进度板归一化为统一任务数据。</p><div class="sec-body">进度板同时兼容任务目录和旧版 Markdown 单文件，是为了让扫描、打钩及插件展示共享同一数据模型。上游依赖仓库文本与看板路径配置，任务文件保留 frontmatter、证据与 checklist，旧板则保留标题、状态、日期和负责人。旧板不伪造 checklist 数据，以 mode 显式区分能力边界，避免打钩功能误写不支持的存储形态。</div><ol class="logic-flow"><li>board、check 或插件加载流程调用 parse_board。</li><li>先解析任务目录中的 frontmatter 与 checklist，再解析旧版进度板分节。</li><li>返回带 mode 和源码位置的统一任务列表，供规则、渲染及打钩消费。</li></ol><div class="pointers"><div class="pointer"><span class="badge">核心</span><code>engine/governkit/rules.py:317-372</code> <code>parse_board</code></div></div></div></details></div>
+</section>
+
+<section id="findings">
+<h2>Findings（按规则 + 文件）</h2>
+<div class="filter-bar"><label>严重度 <select id="sev-filter"><option value="">全部</option><option value="error">error</option><option value="warning">warning</option><option value="info">info</option></select></label><label>规则 <select id="rule-filter"><option value="">全部</option></select></label><label>搜索 <input id="q" type="search" placeholder="文件或消息片段"></label><span id="hit" class="muted"></span></div>
+<div id="findings-list">
+<p class="empty">（无 findings）</p>
+</div>
+</section>
+
+<footer>由 governance-kit 生成 · 单文件自包含 · 无外部资源</footer>
+<script>
+(function () {
+  var sev = document.getElementById('sev-filter');
+  var rule = document.getElementById('rule-filter');
+  var q = document.getElementById('q');
+  var hit = document.getElementById('hit');
+  var rows = Array.prototype.slice.call(document.querySelectorAll('.finding'));
+  function apply() {
+    var sv = sev ? sev.value : '', rv = rule ? rule.value : '';
+    var needle = q ? q.value.trim().toLowerCase() : '';
+    var shown = 0;
+    rows.forEach(function (row) {
+      var ok = (!sv || row.dataset.sev === sv)
+        && (!rv || row.dataset.rule === rv)
+        && (!needle || (row.dataset.hay || '').toLowerCase().indexOf(needle) >= 0);
+      row.classList.toggle('hidden', !ok);
+      if (ok) { shown++; }
+    });
+    if (hit) { hit.textContent = '显示 ' + shown + ' / ' + rows.length; }
+    document.querySelectorAll('.rule-group').forEach(function (g) {
+      var visible = g.querySelectorAll('.finding:not(.hidden)').length;
+      g.style.display = visible ? '' : 'none';
+    });
+  }
+  [sev, rule].forEach(function (el) { if (el) { el.addEventListener('change', apply); } });
+  if (q) { q.addEventListener('input', apply); }
+  apply();
+})();
+</script>
+</body>
+</html>

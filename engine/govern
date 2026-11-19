@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+"""governance-kit 可执行启动器：把 engine 目录入 sys.path 后转交 governkit.cli.main。
+
+上游：终端/脚本直接执行 engine/govern。
+下游：governkit.cli.main() 解析子命令并返回退出码。
+"""
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from governkit.cli import main  # noqa: E402
+
+raise SystemExit(main())
